@@ -1,0 +1,48 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App() {
+  const [value, setValue] = useState(0)
+
+  
+
+  const addValue = () =>{
+    if(value == 10){
+      setValue(10) 
+    }else{
+      setValue(prevValue => prevValue + 1)
+      setValue(prevValue => prevValue + 1)
+      setValue(prevValue => prevValue + 1)
+      setValue(prevValue => prevValue + 1)
+    }
+  }
+
+  const removeValue = () => {
+    if(value>0){
+      setValue(prevValue => prevValue - 1)
+      setValue(prevValue => prevValue - 1)
+      setValue(prevValue => prevValue - 1)
+    }else{
+      setValue(0)
+    }
+  }
+
+
+  return (
+   <>
+   <h1>Calculator</h1>
+   <h2>Counter Value: {value}</h2>
+   
+   <button
+   onClick={addValue}>Add Value {value} </button>
+   <br/>
+   <button
+   onClick={removeValue}>Remove Value {value} </button>
+   {/* <p>Footer: {value}</p> */}
+   </>
+  )
+}
+
+export default App
